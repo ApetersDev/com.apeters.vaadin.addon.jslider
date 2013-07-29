@@ -4,12 +4,12 @@ import java.util.Locale;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.apeters.vaadin.addon.jslider.InputTagConfigurationImpl;
 import com.apeters.vaadin.addon.jslider.JSlider;
 import com.apeters.vaadin.addon.jslider.JSlider.ValueChangeListener;
-import com.apeters.vaadin.addon.jslider.SliderConfigurationImpl;
 import com.apeters.vaadin.addon.jslider.shared.Format;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity;
+import com.apeters.vaadin.addon.jslider.shared.InputTagConfigurationImpl;
+import com.apeters.vaadin.addon.jslider.shared.SliderConfigurationImpl;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity.HeterogeneityItem;
 import com.apeters.vaadin.addon.jslider.shared.Range;
 import com.vaadin.annotations.StyleSheet;

@@ -12,9 +12,7 @@ import org.json.JSONException;
 import com.apeters.vaadin.addon.jslider.client.JSliderState;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity;
 import com.apeters.vaadin.addon.jslider.shared.InputTagConfiguration;
-import com.apeters.vaadin.addon.jslider.shared.InputTagConfigurationImpl;
 import com.apeters.vaadin.addon.jslider.shared.SliderConfiguration;
-import com.apeters.vaadin.addon.jslider.shared.SliderConfigurationImpl;
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.ui.AbstractJavaScriptComponent;
 import com.vaadin.ui.JavaScriptFunction;
@@ -30,7 +28,7 @@ public class JSlider extends AbstractJavaScriptComponent {
 	private final InputTagConfiguration inputTagConfiguration;
 	private final SliderConfiguration sliderConfiguration;
 	
-	public JSlider(InputTagConfigurationImpl inputTagConfiguration, SliderConfigurationImpl sliderConfiguration) {
+	public JSlider(InputTagConfiguration inputTagConfiguration, SliderConfiguration sliderConfiguration) {
 		super();
 		this.inputTagConfiguration = inputTagConfiguration;
 		this.sliderConfiguration = sliderConfiguration;
