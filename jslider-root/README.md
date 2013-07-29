@@ -8,7 +8,7 @@ Official releases of this add-on are available at Vaadin Directory. For Maven in
 
 ## Building and running demo
 
-git clone https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider/tree/master/jslider-root
+git clone https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git
 mvn clean install
 cd demo
 mvn jetty:run
