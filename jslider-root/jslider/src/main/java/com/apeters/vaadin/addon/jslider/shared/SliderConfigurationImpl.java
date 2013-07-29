@@ -1,8 +1,5 @@
-package com.apeters.vaadin.addon.jslider;
+package com.apeters.vaadin.addon.jslider.shared;
 
-import com.apeters.vaadin.addon.jslider.shared.Format;
-import com.apeters.vaadin.addon.jslider.shared.Heterogeneity;
-import com.apeters.vaadin.addon.jslider.shared.Range;
 
 public class SliderConfigurationImpl implements SliderConfiguration {
 	private Range range = new Range(0, 100);

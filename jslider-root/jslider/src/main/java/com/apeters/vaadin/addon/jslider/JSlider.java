@@ -11,6 +11,10 @@ import org.json.JSONException;
 
 import com.apeters.vaadin.addon.jslider.client.JSliderState;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity;
+import com.apeters.vaadin.addon.jslider.shared.InputTagConfiguration;
+import com.apeters.vaadin.addon.jslider.shared.InputTagConfigurationImpl;
+import com.apeters.vaadin.addon.jslider.shared.SliderConfiguration;
+import com.apeters.vaadin.addon.jslider.shared.SliderConfigurationImpl;
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.ui.AbstractJavaScriptComponent;
 import com.vaadin.ui.JavaScriptFunction;

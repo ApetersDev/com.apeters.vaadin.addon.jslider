@@ -1,4 +1,4 @@
-package com.apeters.vaadin.addon.jslider;
+package com.apeters.vaadin.addon.jslider.shared;
 
 public class InputTagConfigurationImpl implements InputTagConfiguration {
 	
