@@ -1,6 +1,6 @@
 # JSlider Add-on for Vaadin 7
 
-JSlider is an UI component add-on for Vaadin 7.
+JSlider is an Vaadin 7 add-on to make the JQuery Slider plugin: http://egorkhmelev.github.io/jslider/ available.
 
 ## Download release
 
@@ -8,12 +8,12 @@ Official releases of this add-on are available at Vaadin Directory. For Maven in
 
 ## Building and running demo
 
-git clone <url of the JSlider repository>
+git clone https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider/tree/master/jslider-root
 mvn clean install
 cd demo
 mvn jetty:run
 
-To see the demo, navigate to http://localhost:8080/
+To see the demo, navigate to http://localhost:8080/jslider-demo
 
 ## Development with Eclipse IDE
 
@@ -21,7 +21,6 @@ For further development of this add-on, the following tool-chain is recommended:
 - Eclipse IDE
 - m2e wtp plug-in (install it from Eclipse Marketplace)
 - Vaadin Eclipse plug-in (install it from Eclipse Marketplace)
-- JRebel Eclipse plug-in (install it from Eclipse Marketplace)
 - Chrome browser
 
 ### Importing project
@@ -48,8 +47,7 @@ Another way of debugging client-side is superdev mode. To enable it, uncomment d
 ## Release notes
 
 ### Version 1.0-SNAPSHOT
-- ...
-- ...
+- initial version
 
 
 ## Issue tracking
@@ -70,14 +68,10 @@ Contributions are welcome, but there are no guarantees that they are accepted as
 
 Add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-JSlider is written by Andre Peters
+JSlider-Add on is written by Andre Peters
+JSLider Javascript Library is written by Egor Khmelev (MIT License)
 
 # Developer Guide
 
 ## Getting started
-
-Here is a simple example on how to try out the add-on component:
-
-<...>
-
-For a more comprehensive example, see src/test/java/org/vaadin/template/demo/DemoUI.java
+see DemoUI.java in jslider-demo and read http://egorkhmelev.github.io/jslider/ 
