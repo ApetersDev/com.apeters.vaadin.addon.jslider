@@ -26,9 +26,9 @@
 		<name>Andre Peters</name>
 	</organization>
 	<scm>
-		<url>git://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</url>
-		<connection>scm:git:https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</connection>
-		<developerConnection>scm:git:https://git@github.com:/ApetersDev/com.apeters.vaadin.addon.jslider.git</developerConnection>
+		<url>https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider/tree/master/jslider-root</url>
+		<connection>scm:git:git://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</connection>
+		<developerConnection>scm:git:git://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</developerConnection>
 		<tag>JSlider add-on for Vaadin</tag>
 	</scm>
 	<issueManagement>
@@ -93,7 +93,7 @@
 			<version>2.6</version>
 		</dependency>
 
-		<!-- This can be replaced with TestNG or some other test framework supported 
+		<!-- This can be replaced with TestNG or some other test framework supported
 			by the surefire plugin -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -193,7 +193,7 @@
 			</plugin>
 		</plugins>
 
-		<!-- This is needed for the sources required by the client-side compiler 
+		<!-- This is needed for the sources required by the client-side compiler
 			to be included in the produced JARs -->
 		<resources>
 			<resource>
