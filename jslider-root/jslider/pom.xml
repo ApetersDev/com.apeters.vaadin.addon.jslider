@@ -27,7 +27,7 @@
 	<scm>
 		<url>https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider/tree/master/jslider-root</url>
 		<connection>scm:git:git://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</connection>
-		<developerConnection>scm:git:git://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/ApetersDev/com.apeters.vaadin.addon.jslider.git</developerConnection>
 		<tag>JSlider add-on for Vaadin</tag>
 	</scm>
 	<issueManagement>
