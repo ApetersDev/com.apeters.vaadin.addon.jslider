@@ -1,6 +1,7 @@
 package com.apeters.vaadin.addon.jslider.demo;
 
 import java.util.Locale;
+import java.util.Random;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -8,10 +9,10 @@ import com.apeters.vaadin.addon.jslider.JSlider;
 import com.apeters.vaadin.addon.jslider.JSlider.ValueChangeListener;
 import com.apeters.vaadin.addon.jslider.shared.Format;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity;
-import com.apeters.vaadin.addon.jslider.shared.InputTagConfigurationImpl;
-import com.apeters.vaadin.addon.jslider.shared.SliderConfigurationImpl;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity.HeterogeneityItem;
+import com.apeters.vaadin.addon.jslider.shared.InputTagConfigurationImpl;
 import com.apeters.vaadin.addon.jslider.shared.Range;
+import com.apeters.vaadin.addon.jslider.shared.SliderConfigurationImpl;
 import com.vaadin.annotations.StyleSheet;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
@@ -19,6 +20,9 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -41,7 +45,8 @@ public class DemoUI extends UI implements ValueChangeListener {
 		SLIDER2,
 		SLIDER3,
 		SLIDER4,
-		SLIDER5;
+		SLIDER5,
+		SLIDER6;
 	}
 	
 	@Override
@@ -72,6 +77,23 @@ public class DemoUI extends UI implements ValueChangeListener {
 		slider5.setWidth(100, Unit.PERCENTAGE);
 		slider5.setValue(600, 720);
 		slider5.addListener(this);
+		
+		final JSlider slider6 = new JSlider(getInputTagConfig(Slider.SLIDER6), getSliderConfig(Slider.SLIDER6));
+		slider6.setWidth(100, Unit.PERCENTAGE);
+		slider6.setValue(600, 720);
+		slider6.addListener(this);
+		
+		final Button slider6UpdateBtn = new Button("update slider configuration");
+		slider6UpdateBtn.addClickListener(new ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				Slider randomSlider = Slider.values()[new Random().nextInt(Slider.values().length)];
+				slider6.setSliderConfiguration(getSliderConfig(randomSlider));
+				slider6.initStateFields();
+			}
+		});
+		
 		// Show it in the middle of the screen
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setStyleName("demoContentLayout");
@@ -87,6 +109,13 @@ public class DemoUI extends UI implements ValueChangeListener {
 		layout.setComponentAlignment(slider4, Alignment.MIDDLE_CENTER);
 		layout.addComponent(slider5);
 		layout.setComponentAlignment(slider5, Alignment.MIDDLE_CENTER);
+		
+		VerticalLayout slider6Layout = new VerticalLayout(slider6, slider6UpdateBtn);
+		slider6Layout.setWidth(100, Unit.PERCENTAGE);
+		slider6Layout.setComponentAlignment(slider6, Alignment.MIDDLE_CENTER);
+		slider6Layout.setCaption("Update configuration example");
+		slider6Layout.setSpacing(true);
+		layout.addComponent(slider6Layout);
 		setContent(layout);
 		
 	}
@@ -146,6 +175,11 @@ public class DemoUI extends UI implements ValueChangeListener {
 						"var mins = ( value - hours*60 );"+
 						"return (hours < 10 ? \"0\"+hours : hours) + \":\" + ( mins == 0 ? \"00\" : mins );");
 				// @formatter:on
+				break;
+			case SLIDER6:
+				config.setRange(new Range(0, 100));
+				config.setStep(1);
+				config.setRound(1);
 				break;
 			
 			default:

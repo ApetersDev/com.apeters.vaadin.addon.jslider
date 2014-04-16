@@ -25,8 +25,8 @@ import com.vaadin.ui.JavaScriptFunction;
 		"JSlider.js"})
 public class JSlider extends AbstractJavaScriptComponent {
 	
-	private final InputTagConfiguration inputTagConfiguration;
-	private final SliderConfiguration sliderConfiguration;
+	private InputTagConfiguration inputTagConfiguration;
+	private SliderConfiguration sliderConfiguration;
 	
 	public JSlider(InputTagConfiguration inputTagConfiguration, SliderConfiguration sliderConfiguration) {
 		super();
@@ -55,7 +55,7 @@ public class JSlider extends AbstractJavaScriptComponent {
 		});
 	}
 	
-	private void initStateFields() {
+	public void initStateFields() {
 		getState().setTagId(this.inputTagConfiguration.getTagId());
 		getState().setTagClass(this.inputTagConfiguration.getTagClass());
 		getState().setFrom(this.sliderConfiguration.getRange().getFrom());
@@ -110,7 +110,6 @@ public class JSlider extends AbstractJavaScriptComponent {
 	// We must override getState() to cast the state to JSliderState
 	@Override
 	protected JSliderState getState() {
-		// TODO Auto-generated method stub
 		return (JSliderState) super.getState();
 	}
 	
@@ -122,5 +121,21 @@ public class JSlider extends AbstractJavaScriptComponent {
 	
 	public void addListener(ValueChangeListener listener) {
 		this.listeners.add(listener);
+	}
+	
+	public InputTagConfiguration getInputTagConfiguration() {
+		return this.inputTagConfiguration;
+	}
+	
+	public void setInputTagConfiguration(InputTagConfiguration inputTagConfiguration) {
+		this.inputTagConfiguration = inputTagConfiguration;
+	}
+	
+	public SliderConfiguration getSliderConfiguration() {
+		return this.sliderConfiguration;
+	}
+	
+	public void setSliderConfiguration(SliderConfiguration sliderConfiguration) {
+		this.sliderConfiguration = sliderConfiguration;
 	}
 }
