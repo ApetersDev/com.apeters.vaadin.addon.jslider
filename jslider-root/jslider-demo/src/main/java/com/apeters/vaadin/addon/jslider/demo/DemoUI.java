@@ -89,7 +89,6 @@ public class DemoUI extends UI implements ValueChangeListener {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// 1 because we want only slider with 1 value
 				DemoUI.this.currentSlider6 = DemoUI.this.currentSlider6 == Slider.SLIDER1 ? Slider.SLIDER2 : Slider.SLIDER1;
 				slider6.setSliderConfiguration(getSliderConfig(DemoUI.this.currentSlider6));
 				slider6.initStateFields();
