@@ -36,5 +36,5 @@
 
     
 
-    <inherits name="com.apeters.vaadin.addon.jslider.WidgetSet" />
+    
 </module>

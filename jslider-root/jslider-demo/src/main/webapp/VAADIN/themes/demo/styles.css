@@ -7,7 +7,7 @@
 }
 
 .v-vaadin-version:after {
-	content: "7.1.0";
+	content: "7.1.13";
 }
 
 .v-generated-body {
@@ -15,6 +15,10 @@
 	height: 100%;
 	border: 0;
 	margin: 0;
+	overflow: hidden;
+}
+
+.v-modal-window-open {
 	overflow: hidden;
 }
 
@@ -388,6 +392,14 @@
 .demo .v-accordion-item-content {
 	position: absolute;
 	width: 100%;
+}
+
+.demo .v-browserframe {
+	font-size: 0;
+}
+
+.demo .v-browserframe > span {
+	font-size: 12px;
 }
 
 .demo .v-button {
@@ -1311,8 +1323,16 @@ body .demo.v-app .v-app-loading {
 	line-height: normal;
 }
 
-.v-ios.v-sa6 .demo .v-scrollable {
+.v-ff .demo .v-scrollable {
+	font-size: 12px;
+}
+
+.v-ios.v-webkit .demo .v-scrollable {
 	-webkit-overflow-scrolling: touch;
+}
+
+.v-ios5.v-webkit .demo .v-scrollable {
+	-webkit-overflow-scrolling: none;
 }
 
 .demo.v-overlay-container {
@@ -6196,6 +6216,10 @@ body .demo.v-app .v-app-loading {
 	display: inline-block;
 }
 
+.v-sa .demo .v-tabsheet-tabs .v-icon {
+	vertical-align: top;
+}
+
 .demo .v-tabsheet-tabs .v-icon {
 	width: 16px !important;
 	height: 16px !important;
@@ -6948,15 +6972,15 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-window-black .v-window-closebox {
 	top: 8px;
-	background-image: url(../reindeer/window/img/black/close.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/close.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-closebox:hover {
-	background-image: url(../reindeer/window/img/black/close-hover.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/close-hover.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-closebox:active {
-	background-image: url(../reindeer/window/img/black/close-pressed.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/close-pressed.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-footer {
@@ -6974,28 +6998,28 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-window-black .v-window-maximizebox {
 	top: 8px;
-	background-image: url(../reindeer/window/img/black/maximize.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/maximize.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-maximizebox:hover {
-	background-image: url(../reindeer/window/img/black/maximize-hover.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/maximize-hover.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-maximizebox:active {
-	background-image: url(../reindeer/window/img/black/maximize-active.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/maximize-active.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-restorebox {
 	top: 8px;
-	background-image: url(../reindeer/window/img/black/restore.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/restore.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-restorebox:hover {
-	background-image: url(../reindeer/window/img/black/restore-hover.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/restore-hover.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-restorebox:active {
-	background-image: url(../reindeer/window/img/black/restore-active.png);/** sprite-ref: verticals */
+	background-image: url(../reindeer/window/img/black/restore-active.png);/** sprite-ref: black-verticals */
 }
 
 .demo .v-window-black .v-window-contents {

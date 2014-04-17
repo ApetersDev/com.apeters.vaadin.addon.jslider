@@ -1,7 +1,6 @@
 package com.apeters.vaadin.addon.jslider.demo;
 
 import java.util.Locale;
-import java.util.Random;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -49,6 +48,8 @@ public class DemoUI extends UI implements ValueChangeListener {
 		SLIDER6;
 	}
 	
+	private Slider currentSlider6;
+	
 	@Override
 	protected void init(VaadinRequest request) {
 		
@@ -80,7 +81,7 @@ public class DemoUI extends UI implements ValueChangeListener {
 		
 		final JSlider slider6 = new JSlider(getInputTagConfig(Slider.SLIDER6), getSliderConfig(Slider.SLIDER6));
 		slider6.setWidth(100, Unit.PERCENTAGE);
-		slider6.setValue(600, 720);
+		slider6.setValue(7);
 		slider6.addListener(this);
 		
 		final Button slider6UpdateBtn = new Button("update slider configuration");
@@ -88,9 +89,12 @@ public class DemoUI extends UI implements ValueChangeListener {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
-				Slider randomSlider = Slider.values()[new Random().nextInt(Slider.values().length)];
-				slider6.setSliderConfiguration(getSliderConfig(randomSlider));
+				// 1 because we want only slider with 1 value
+				DemoUI.this.currentSlider6 = DemoUI.this.currentSlider6 == Slider.SLIDER1 ? Slider.SLIDER2 : Slider.SLIDER1;
+				slider6.setSliderConfiguration(getSliderConfig(DemoUI.this.currentSlider6));
 				slider6.initStateFields();
+				// set new value based on the range of the new configuration
+				slider6.setValue(slider6.getSliderConfiguration().getRange().getFrom());
 			}
 		});
 		
