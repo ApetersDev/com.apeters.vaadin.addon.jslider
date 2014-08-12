@@ -30,6 +30,10 @@ public interface SliderConfiguration {
 	public abstract boolean isLimits();
 
 	public abstract void setLimits(boolean limits);
+	
+	public abstract boolean isSmooth();
+	
+	public abstract void setSmooth(final boolean smooth);
 
 	public abstract Object[] getScale();
 

@@ -8,7 +8,8 @@ public class SliderConfigurationImpl implements SliderConfiguration {
 	private Format format;
 	private String dimension = "";
 	private Heterogeneity heterogeneity;
-	private boolean limits;
+	private boolean limits = true;
+	private boolean smooth = true;
 	private Object[] scale;
 	private String skin;
 	private String calculate = "return value;";
@@ -74,6 +75,14 @@ public class SliderConfigurationImpl implements SliderConfiguration {
 	
 	public void setLimits(boolean limits) {
 		this.limits = limits;
+	}
+	
+	public boolean isSmooth() {
+		return smooth;
+	}
+	
+	public void setSmooth(final boolean smooth) {
+		this.smooth = smooth;
 	}
 	
 	@Override
