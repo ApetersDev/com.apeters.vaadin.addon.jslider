@@ -46,7 +46,8 @@ public class DemoUI extends UI implements ValueChangeListener {
 		SLIDER3,
 		SLIDER4,
 		SLIDER5,
-		SLIDER6;
+		SLIDER6,
+		SLIDER7;
 	}
 	
 	@Override
@@ -94,6 +95,11 @@ public class DemoUI extends UI implements ValueChangeListener {
 			}
 		});
 		
+		final JSlider slider7 = new JSlider(getInputTagConfig(Slider.SLIDER7), getSliderConfig(Slider.SLIDER7));
+		slider7.setWidth(100, Unit.PERCENTAGE);
+		slider7.setValue(10);
+		slider7.addListener(this);
+		
 		// Show it in the middle of the screen
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setStyleName("demoContentLayout");
@@ -116,6 +122,10 @@ public class DemoUI extends UI implements ValueChangeListener {
 		slider6Layout.setCaption("Update configuration example");
 		slider6Layout.setSpacing(true);
 		layout.addComponent(slider6Layout);
+		
+		layout.addComponent(slider7);
+		layout.setComponentAlignment(slider7, Alignment.MIDDLE_CENTER);
+		
 		setContent(layout);
 		
 	}
@@ -180,6 +190,13 @@ public class DemoUI extends UI implements ValueChangeListener {
 				config.setRange(new Range(0, 100));
 				config.setStep(1);
 				config.setRound(1);
+				break;
+			
+			case SLIDER7:
+				config.setRange(new Range(0, 20));
+				config.setStep(1);
+				config.setRound(1);
+				config.setSmooth(false);
 				break;
 			
 			default:
