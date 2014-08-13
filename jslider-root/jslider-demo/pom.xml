@@ -5,7 +5,7 @@
 	<groupId>com.apeters.vaadin.addon.jslider</groupId>
 	<artifactId>jslider-demo</artifactId>
 	<packaging>war</packaging>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.2</version>
 	<name>JSlider Add-on Demo</name>
 
 	<properties>
