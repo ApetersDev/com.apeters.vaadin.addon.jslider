@@ -57,32 +57,32 @@ public class DemoUI extends UI implements ValueChangeListener {
 		final JSlider slider1 = new JSlider(getInputTagConfig(Slider.SLIDER1), getSliderConfig(Slider.SLIDER1));
 		slider1.setWidth(100, Unit.PERCENTAGE);
 		slider1.setValue(20);
-		slider1.addListener(this);
+		slider1.addValueChangeListener(this);
 		
 		final JSlider slider2 = new JSlider(getInputTagConfig(Slider.SLIDER2), getSliderConfig(Slider.SLIDER2));
-		slider2.addListener(this);
+		slider2.addValueChangeListener(this);
 		slider2.setWidth(100, Unit.PERCENTAGE);
 		slider2.setValue(0, 50000);
 		
 		final JSlider slider3 = new JSlider(getInputTagConfig(Slider.SLIDER3), getSliderConfig(Slider.SLIDER3));
 		slider3.setWidth(100, Unit.PERCENTAGE);
 		slider3.setValue(25, 75);
-		slider3.addListener(this);
+		slider3.addValueChangeListener(this);
 		
 		final JSlider slider4 = new JSlider(getInputTagConfig(Slider.SLIDER4), getSliderConfig(Slider.SLIDER4));
 		slider4.setWidth(100, Unit.PERCENTAGE);
 		slider4.setValue(5, 10);
-		slider4.addListener(this);
+		slider4.addValueChangeListener(this);
 		
 		final JSlider slider5 = new JSlider(getInputTagConfig(Slider.SLIDER5), getSliderConfig(Slider.SLIDER5));
 		slider5.setWidth(100, Unit.PERCENTAGE);
 		slider5.setValue(600, 720);
-		slider5.addListener(this);
+		slider5.addValueChangeListener(this);
 		
 		final JSlider slider6 = new JSlider(getInputTagConfig(Slider.SLIDER6), getSliderConfig(Slider.SLIDER6));
 		slider6.setWidth(100, Unit.PERCENTAGE);
 		slider6.setValue(600, 720);
-		slider6.addListener(this);
+		slider6.addValueChangeListener(this);
 		
 		final Button slider6UpdateBtn = new Button("update slider configuration");
 		slider6UpdateBtn.addClickListener(new ClickListener() {
@@ -98,7 +98,7 @@ public class DemoUI extends UI implements ValueChangeListener {
 		final JSlider slider7 = new JSlider(getInputTagConfig(Slider.SLIDER7), getSliderConfig(Slider.SLIDER7));
 		slider7.setWidth(100, Unit.PERCENTAGE);
 		slider7.setValue(10);
-		slider7.addListener(this);
+		slider7.addValueChangeListener(this);
 		
 		// Show it in the middle of the screen
 		final VerticalLayout layout = new VerticalLayout();

@@ -126,7 +126,14 @@ public class JSlider extends AbstractJavaScriptComponent {
 	
 	ArrayList<ValueChangeListener> listeners = new ArrayList<ValueChangeListener>();
 	
+	/**
+	 * @deprecated Use {@link #addValueChangeListener(ValueChangeListener)} instead
+	 */
 	public void addListener(ValueChangeListener listener) {
+		addValueChangeListener(listener);
+	}
+
+	public void addValueChangeListener(final ValueChangeListener listener) {
 		this.listeners.add(listener);
 	}
 	
