@@ -61,6 +61,8 @@ public class JSlider extends AbstractJavaScriptComponent {
 		getState().setStep(this.sliderConfiguration.getStep());
 		getState().setRound(this.sliderConfiguration.getRound());
 		getState().setDimension(this.sliderConfiguration.getDimension());
+		getState().setLimits(this.sliderConfiguration.isLimits());
+		getState().setSmooth(this.sliderConfiguration.isSmooth());
 		// the format string
 		getState().setFormat(this.sliderConfiguration.getFormatString());
 		getState().setScale(this.sliderConfiguration.getScale());
