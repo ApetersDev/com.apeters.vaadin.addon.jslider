@@ -15,6 +15,7 @@ public class JSliderState extends JavaScriptComponentState {
 	private Number round;
 	private String dimension;
 	private boolean limits;
+	private boolean smooth;
 	private Object[] scale;
 	private String skin;
 	private String calculate;
@@ -85,6 +86,14 @@ public class JSliderState extends JavaScriptComponentState {
 	
 	public void setLimits(boolean limits) {
 		this.limits = limits;
+	}
+	
+	public boolean isSmooth() {
+		return smooth;
+	}
+	
+	public void setSmooth(final boolean smooth) {
+		this.smooth = smooth;
 	}
 	
 	public Object[] getScale() {

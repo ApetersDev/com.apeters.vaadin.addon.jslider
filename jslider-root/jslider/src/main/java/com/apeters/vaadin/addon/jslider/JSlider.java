@@ -24,6 +24,7 @@ import com.vaadin.ui.JavaScriptFunction;
 		"vaadin://addons/jslider/js/jquery.dependClass-0.1.js", "vaadin://addons/jslider/js/draggable-0.1.js", "vaadin://addons/jslider/js/jquery.slider.js",
 		"JSlider.js"})
 public class JSlider extends AbstractJavaScriptComponent {
+	private static final long serialVersionUID = 6018826093083410384L;
 	
 	private InputTagConfiguration inputTagConfiguration;
 	private SliderConfiguration sliderConfiguration;
@@ -42,15 +43,12 @@ public class JSlider extends AbstractJavaScriptComponent {
 	}
 	
 	private void registerFunctions() {
-		
 		addFunction("callback", new JavaScriptFunction() {
-			
+			private static final long serialVersionUID = -286554526404269688L;
+
 			@Override
 			public void call(JSONArray arguments) throws JSONException {
-				getState().setValue(arguments.getString(0));
-				for(ValueChangeListener listener : JSlider.this.listeners) {
-					listener.valueChange(getFirstValue(), getSecondValue());
-				}
+				setValue(arguments.getString(0));
 			}
 		});
 	}
@@ -63,6 +61,8 @@ public class JSlider extends AbstractJavaScriptComponent {
 		getState().setStep(this.sliderConfiguration.getStep());
 		getState().setRound(this.sliderConfiguration.getRound());
 		getState().setDimension(this.sliderConfiguration.getDimension());
+		getState().setLimits(this.sliderConfiguration.isLimits());
+		getState().setSmooth(this.sliderConfiguration.isSmooth());
 		// the format string
 		getState().setFormat(this.sliderConfiguration.getFormatString());
 		getState().setScale(this.sliderConfiguration.getScale());
@@ -97,14 +97,21 @@ public class JSlider extends AbstractJavaScriptComponent {
 	}
 	
 	public void setValue(Number value) {
-		getState().setValue(String.valueOf(value));
+		setValue(String.valueOf(value));
 	}
 	
 	public void setValue(Number value1, Number value2) {
 		if(value1 == null || value2 == null) {
 			throw new IllegalArgumentException("Values are not allowed to be null.");
 		}
-		getState().setValue(String.format("%s;%s", String.valueOf(value1), String.valueOf(value2)));
+		setValue(String.format("%s;%s", String.valueOf(value1), String.valueOf(value2)));
+	}
+	
+	public void setValue(final String value) {
+		getState().setValue(value);
+		for(ValueChangeListener listener : listeners) {
+			listener.valueChange(getFirstValue(), getSecondValue());
+		}
 	}
 	
 	// We must override getState() to cast the state to JSliderState
@@ -119,7 +126,14 @@ public class JSlider extends AbstractJavaScriptComponent {
 	
 	ArrayList<ValueChangeListener> listeners = new ArrayList<ValueChangeListener>();
 	
+	/**
+	 * @deprecated Use {@link #addValueChangeListener(ValueChangeListener)} instead
+	 */
 	public void addListener(ValueChangeListener listener) {
+		addValueChangeListener(listener);
+	}
+
+	public void addValueChangeListener(final ValueChangeListener listener) {
 		this.listeners.add(listener);
 	}
 	

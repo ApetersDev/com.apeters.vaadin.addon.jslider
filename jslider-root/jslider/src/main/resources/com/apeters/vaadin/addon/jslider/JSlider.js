@@ -21,6 +21,8 @@ window.com_apeters_vaadin_addon_jslider_JSlider = function() {
 		  scale: this.getState().scale,
 		  skin: this.getState().skin,
 		  dimension: this.getState().dimension,
+		  limits: this.getState().limits,
+		  smooth: this.getState().smooth,
 		  callback:  function(value) {
 			  connector.callback(value);
 		  },
