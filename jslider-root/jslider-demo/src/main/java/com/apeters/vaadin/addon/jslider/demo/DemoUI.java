@@ -84,8 +84,7 @@ public class DemoUI extends UI implements ValueChangeListener {
 		final JSlider slider6 = new JSlider(getInputTagConfig(Slider.SLIDER6), getSliderConfig(Slider.SLIDER6));
 		slider6.setWidth(100, Unit.PERCENTAGE);
 		slider6.setValue(600, 720);
-		slider6.addValueChangeListener(this);
-		
+		slider6.addValueChangeListener(this);	
 		final Button slider6UpdateBtn = new Button("update slider configuration");
 		slider6UpdateBtn.addClickListener(new ClickListener() {
 			
