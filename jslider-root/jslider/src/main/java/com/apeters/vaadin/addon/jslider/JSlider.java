@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
+import elemental.json.JsonArray;
+import elemental.json.JsonException;
 
 import com.apeters.vaadin.addon.jslider.client.JSliderState;
 import com.apeters.vaadin.addon.jslider.shared.Heterogeneity;
@@ -47,7 +47,7 @@ public class JSlider extends AbstractJavaScriptComponent {
 			private static final long serialVersionUID = -286554526404269688L;
 
 			@Override
-			public void call(JSONArray arguments) throws JSONException {
+			public void call(JsonArray arguments) throws JsonException {
 				setValue(arguments.getString(0));
 			}
 		});
