@@ -10,7 +10,7 @@
  	<name>JSlider Add-on Demo</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.1.1</vaadin.version>
+		<vaadin.version>7.6.2</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 	</properties>
 	<licenses>
